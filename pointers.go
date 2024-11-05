@@ -3,5 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Pointers are cool!")
+	age := 28
+	adultYears := getAdultYears(age)
+
+	fmt.Println("Age: ", age)
+	fmt.Println(adultYears)
+}
+
+func getAdultYears(age int) int {
+	return age - 18
 }
