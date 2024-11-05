@@ -3,19 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	age := 32
+	age := 28
 	agePointer := &age
-	// var agePointer *int // declaration
-	// agePointer = &age   // instantiation
 
 	fmt.Println("Age Address:", agePointer) // 0x1400009a02
 	fmt.Println("Age Value:", *agePointer)  // 28
 
-	// adultYears := getAdultYears(&age)
-	adultYears := getAdultYears(agePointer)
-	fmt.Println(adultYears)
+	editAgeToAdultYears(agePointer)
+
+	fmt.Println("Age New Value:", age)
 }
 
-func getAdultYears(age *int) int {
-	return *age - 18
+func editAgeToAdultYears(age *int) {
+	// *age = *age - 18
+	*age -= 18
 }
